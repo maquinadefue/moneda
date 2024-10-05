@@ -1,0 +1,29 @@
+<div> 
+  <ion-text>
+    <h1>Conversión</h1>
+  </ion-text>
+
+  <ion-input type="number" placeholder="Ingresa la cantidad" [(ngModel)]="bogeto"></ion-input>
+
+  <!-- Grupo de radio para seleccionar la moneda -->
+  <ion-radio-group [(ngModel)]="selectedCurrency">
+    <ion-item>
+      <ion-label>Dólar</ion-label>
+      <ion-radio slot="start" value="dolar"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>Bolívar</ion-label>
+      <ion-radio slot="start" value="bolivar"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>Euro</ion-label>
+      <ion-radio slot="start" value="euro"></ion-radio>
+    </ion-item>
+  </ion-radio-group>
+
+  <ion-button (click)="pesos()">Convertir</ion-button>
+
+  <ion-text>
+    <h2>Resultado: {{ bogeto * conversionRates[selectedCurrency] }} Pesos</h2>
+  </ion-text>
+</div>
